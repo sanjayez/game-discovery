@@ -1,3 +1,4 @@
+import { IoWarningOutline } from "react-icons/io5";
 import { GameResult } from "../hooks/useGames";
 import getCroppedUrl from "../utilities/getCroppedUrl";
 import Card from "./Card";
@@ -18,8 +19,9 @@ const Feed = ({ games, isLoading, error }: Props) => {
           Based on player counts and release date.
         </p>
         {error ? (
-          <p className="text-2xl text-white font-bold mt-8 mb-8">
-            Something went wrong!
+          <p className="text-xl text-white font-bold mt-8 mb-8 flex items-center gap-2">
+            <IoWarningOutline /> Something went wrong while trying to fetch
+            games!
           </p>
         ) : (
           <div className="w-full grid grid-cols-3 gap-2 mt-12">
