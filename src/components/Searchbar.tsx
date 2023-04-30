@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { FaSearch } from "react-icons/fa";
 import { debounced } from "../utilities/debounce";
 import gameService from "../services/GameService";
@@ -39,7 +39,7 @@ const Searchbar = ({ count }: Props) => {
         {data.length !== 0 && (
           <div className="absolute w-full mt-2 rounded bg-dark-light">
             <ul>
-              {data.map((game) => {
+              {data.slice(0, 9).map((game) => {
                 return (
                   <li key={game.id} className="py-3 px-2 hover:bg-black">
                     <div className="flex items-center">

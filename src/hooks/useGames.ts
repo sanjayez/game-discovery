@@ -18,7 +18,7 @@ type count = number;
 export const useGames = (search?: string) => {
   const [games, setGames] = useState<GameResult[]>([]);
   const [count, setCount] = useState<count>(0);
-  const [error, setError] = useState("");
+  const [error, setError] = useState(false);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -31,7 +31,8 @@ export const useGames = (search?: string) => {
         setLoading(false);
       })
       .catch((err) => {
-        setError(err.message);
+        if (err.message === "canceled") return;
+        setError(true);
         setLoading(false);
       });
 

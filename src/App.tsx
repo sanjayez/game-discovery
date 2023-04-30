@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className={`${dark ? "dark" : "false"} bg-black`}>
-      <div className="md:w-11/12 mx-auto">
+      <div className="md:w-11/12 mx-auto overflow-x-hidden">
         <Main />
       </div>
     </div>

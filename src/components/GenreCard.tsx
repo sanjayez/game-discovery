@@ -8,8 +8,12 @@ interface Props {
 const GenreCard = ({ name, img }: Props) => {
   return (
     <motion.div
-      initial={{ background: "none" }}
+      layout
+      initial={{ background: "none", opacity: 0, height: "auto" }}
+      animate={{ opacity: 1, height: "auto" }}
       whileHover={{ scale: 1.04 }}
+      exit={{ opacity: 0 }}
+      transition={{ opacity: { duration: 0.5 } }}
       className="w-full flex items-center my-2 cursor-pointer rounded">
       <img
         className="w-10 h-10 object-cover rounded mr-4"
